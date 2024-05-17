@@ -1,18 +1,18 @@
-package com.example.androidnavigationinjetpackcompose
+package com.example.androidnavigationinjetpackcompose.home_module.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
+import com.example.androidnavigationinjetpackcompose.home_module.navigation.HomeModuleNavigationSetup
 import com.example.androidnavigationinjetpackcompose.ui.theme.AndroidNavigationInJetpackComposeTheme
 
-class MainActivity : ComponentActivity() {
+class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidNavigationInJetpackComposeTheme {
-                val navController = rememberNavController()
-                AppNavigationSetup(navController = navController)
+                HomeModuleNavigationSetup(navController = rememberNavController())
             }
         }
     }

@@ -1,6 +1,5 @@
-package com.example.androidnavigationinjetpackcompose
+package com.example.androidnavigationinjetpackcompose.home_module.presentation.screen
 
-import android.widget.Space
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +21,9 @@ fun BScreen(navController: NavController, args: ScreenBArgs) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Text(text = "Home Module Screen B")
+
+        Spacer(modifier = Modifier.height(60.dp))
 
         Text(text = args.name.toString())
 

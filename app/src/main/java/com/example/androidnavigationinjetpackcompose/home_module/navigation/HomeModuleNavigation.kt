@@ -1,22 +1,22 @@
-package com.example.androidnavigationinjetpackcompose
+package com.example.androidnavigationinjetpackcompose.home_module.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.example.androidnavigationinjetpackcompose.home_module.presentation.screen.AScreen
+import com.example.androidnavigationinjetpackcompose.home_module.presentation.screen.BScreen
+import com.example.androidnavigationinjetpackcompose.home_module.presentation.screen.ScreenA
 import com.example.androidnavigationinjetpackcompose.model.ScreenBArgs
 
 @Composable
-fun AppNavigationSetup(navController: NavHostController) {
+fun HomeModuleNavigationSetup(navController: NavHostController) {
 
     NavHost(
         navController = navController,
-        startDestination = SplashScreen
+        startDestination = ScreenA
     ) {
-        composable<SplashScreen> {
-            SplashScreen(navController = navController)
-        }
         composable<ScreenA> {
             AScreen(navController = navController)
         }

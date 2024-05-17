@@ -1,6 +1,6 @@
-package com.example.androidnavigationinjetpackcompose
+package com.example.androidnavigationinjetpackcompose.core
 
-import android.window.SplashScreen
+import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
+import androidx.compose.ui.platform.LocalContext
+import com.example.androidnavigationinjetpackcompose.home_module.presentation.HomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
@@ -18,7 +19,9 @@ import kotlinx.serialization.Serializable
 object SplashScreen
 
 @Composable
-fun SplashScreen(navController: NavController){
+fun SplashScreen(){
+
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -30,7 +33,8 @@ fun SplashScreen(navController: NavController){
 
     LaunchedEffect(key1 = Unit) {
         delay(3000)
-        navController.navigate(ScreenA)
+        val intent = Intent(context, HomeActivity::class.java)
+        context.startActivity(intent)
     }
 
 }
