@@ -53,17 +53,19 @@ fun AScreen(navController: NavController) {
         OutlinedTextField(
             value = screenAState.value.age.toString(),
             onValueChange = {
-                screenAState.value =  screenAState.value.copy(age = it.toInt())
+                screenAState.value = screenAState.value.copy(age = it.toInt())
             },
             keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
         )
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
-            navController.navigate(ScreenBArgs(
-                name = screenAState.value.name,
-                age = screenAState.value.age.toString().toInt()
-            ))
+            navController.navigate(
+                ScreenBArgs(
+                    name = screenAState.value.name,
+                    age = screenAState.value.age.toString().toInt()
+                )
+            )
         }) {
             Text(text = "Go to screen B")
         }
